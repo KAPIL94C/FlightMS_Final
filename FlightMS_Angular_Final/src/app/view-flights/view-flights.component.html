@@ -1,0 +1,28 @@
+
+        <div class="panel panel-primary" class="container">
+        <div class="panel-heading">
+            <h2>Display Flight Details!!</h2>
+
+        </div>
+        <div class="panel-body">
+<table  class="table table-striped">
+    <thead>   
+<tr>
+        <th>Flight Number</th>
+        <th>Flight Model</th>
+        <th>Carrier Name</th>
+        <th>Seat Capacity</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor ="let f of flight">
+    
+        <td>{{f.flightNumber}}</td> 
+        <td>{{f.flightModel}}</td> 
+        <td>{{f.carrierName}}</td> 
+        <td>{{f.seatCapacity}}</td>
+     </tr>
+    </tbody>
+</table>
+</div>
+</div>

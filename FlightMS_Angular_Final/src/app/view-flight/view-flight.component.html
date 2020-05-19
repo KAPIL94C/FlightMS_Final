@@ -1,0 +1,63 @@
+<html>
+    <head></head>
+    <body class="container">
+
+<form  #data="ngForm" (ngSubmit)="findFlightById(data)">
+
+    <div class="d-flex justify-content-center">
+       
+        <table>
+          <tr>
+              <td>
+              <input type="number"
+               [class.is-invalid]="numberCtrl.invalid && numberCtrl.touched" 
+               placeholder="Flight Number : XXXX" 
+               name="flightNumber" 
+               #numberCtrl="ngModel" 
+               ngModel required >
+              <div  class="text-danger"
+               [class.d-none]="numberCtrl.valid || numberCtrl.untouched">
+                  flight Number is required 
+              </div>
+              </td>
+      <td>
+      <input type="submit" class="btn btn-primary" [disabled]="data.invalid" value="search">
+  </td>
+  </tr>
+  </table>    
+      
+      </div>
+  
+    </form>
+
+    <div class="d-flex justify-content-center" >
+
+    <div>
+
+        <div class="panel-heading"> <br> <h3>Search  Flight Status !!!</h3><br></div>
+    <div *ngIf="foundStatus==='found'">
+   <div>
+        <label><b>Flight Number :  </b></label>{{foundFlight.flightNumber}}
+        </div>
+        <div> 
+    <label><b> Flight  Model :</b></label>{{foundFlight.flightModel}}
+    </div>
+    <div>
+        <label><b> Carrier Name :</b></label>{{foundFlight.carrierName}}
+        </div>
+        <div>
+            <label><b> Seat Capacity :</b></label>{{foundFlight.seatCapacity}}
+            </div>
+    </div>
+    <div *ngIf="foundStatus==='notfound'">
+   
+    <div class="alert alert-warning">
+        <strong>Failed!</strong>  Flight not found !!
+      </div>
+    </div>
+
+    </div>
+    </div>
+
+</body>
+</html>

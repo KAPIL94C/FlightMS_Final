@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  </head>
+  <body >
+    
+<div class="container">   
+  
+  <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+      <a routerLink="add-flight" class="btn btn-info" role="button">Add Flight</a>
+    <a routerLink="view-flights" class="btn btn-info" role="button">view Flights</a>    
+    <a routerLink="view-flight" class="btn btn-info" role="button">Search Flight </a>
+  <a routerLink="delete-flight" class="btn btn-info" role="button">Delete Flight </a>   
+  <a routerLink="update-flight" class="btn btn-info" role="button">Update Flight </a> 
+  </nav>
+  <router-outlet></router-outlet>
+  
+  
+  
+  <footer class="footer">
+    <div class="container">
+        <span>Developed by @Kapil  Chaudhary</span>
+    </div>
+  </footer>
+</div>
+  </body>
+</html>

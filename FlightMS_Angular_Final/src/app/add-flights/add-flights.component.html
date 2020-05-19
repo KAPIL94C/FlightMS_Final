@@ -1,0 +1,77 @@
+
+        <div class="container">
+        <div class="d-flex justify-content-center">
+                       
+        <form #flightForm="ngForm"
+         class="border-class" 
+           (ngSubmit)="flightForm.valid && addFlight(flightForm)">
+              
+            <div class="text-primary">
+                <h4>ADD FLIGHTS!!</h4>
+            </div>
+                <div class="form-group">
+                    <label for="flightModel"> Flight Model :</label>
+
+                    <input type="text" 
+                    [class.is-invalid]="modelCtrl.invalid && modelCtrl.touched" 
+                    name="flightModel" 
+                    #modelCtrl="ngModel" 
+                    class="form-control"
+                     ngModel required >
+                    
+                     <small  class="text-danger"
+                     [class.d-none]="modelCtrl.valid || modelCtrl.untouched">
+                        flight model is required 
+                    </small>
+                </div>
+
+
+                <div class="form-group">
+                   <label for="carrierName">Carrier Name :</label> 
+                    <input type="text" 
+                    name="carrierName" 
+                    [class.is-invalid]="carrierCtrl.invalid && carrierCtrl.touched" 
+                    #carrierCtrl="ngModel" 
+                    class="form-control"
+                     ngModel required>
+                    <small  class="text-danger" 
+                    [class.d-none]="carrierCtrl.valid || carrierCtrl.untouched">
+                        flight name is required 
+                    </small>
+                </div>
+                
+                
+                <div class="form-group">
+                    <label for="seatCapacity">Seat Capacity :</label> 
+                    <input type="number" 
+                    [class.is-invalid]="seatCtrl.invalid && seatCtrl.touched" 
+                    #seatCtrl="ngModel"  
+                    name="seatCapacity"
+                     class="form-control"
+                      ngModel required>
+                    <small  class="text-danger" 
+                    [class.d-none]="seatCtrl.valid || seatCtrl.untouched">
+                        Seat Capacity is required 
+                    </small>
+                </div>
+
+
+            <div class="form-group"> 
+                <input type="submit" 
+                [disabled]="!flightForm.valid" 
+                style="margin:5px" 
+                value="Add" class="btn btn-success">
+    </div>
+
+
+            <div *ngIf="addedFlight!==null">
+                <div class="alert alert-success">
+                    <strong>Success!</strong> Flight added successfully.
+                  </div>
+                </div>
+
+        </form>
+</div>    
+  </div>
+   
+

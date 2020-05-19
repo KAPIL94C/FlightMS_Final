@@ -1,0 +1,12 @@
+.container{
+    background-image: url(D:\projects\Angular\FlightMS\src\assets\pics\a.jpg);
+    width: 100%;
+    height: 530px;
+  }
+  .border-class
+{
+  border:thin black solid;
+  width:400px;
+  margin:20px;
+padding:20px;
+}
